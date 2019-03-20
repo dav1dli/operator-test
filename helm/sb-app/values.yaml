@@ -7,7 +7,7 @@ application_domain:
   
 image:
   name: operator-test
-  repository: helm-operator-demo/operator-test
+  repository: operator-test/operator-test
   tag: latest
   pullPolicy: IfNotPresent
 service:
