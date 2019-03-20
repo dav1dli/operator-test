@@ -6,8 +6,8 @@ replicaCount: 1
 application_domain:
   
 image:
-  name: sb-app-docker
-  repository: 172.30.1.1:5000/sb-example/sb-app-docker
+  name: operator-test
+  repository: helm-operator-demo/operator-test
   tag: latest
   pullPolicy: IfNotPresent
 service:
