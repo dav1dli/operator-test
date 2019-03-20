@@ -1,0 +1,34 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: operator-test
+  name: operator-test
+  namespace: operator-test
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'operator-test:latest'
+  source:
+    contextDir: gs-spring-boot-docker
+    git:
+      uri: 'https://github.com/dav1dli/operator-test.git'
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'openjdk18-openshift:latest'
+    type: Source
+  successfulBuildsHistoryLimit: 5
+  triggers:
+    - github:
+        secret: PD4W3IIXciPAQAkieJIZ
+      type: GitHub
+    - generic:
+        secret: aQfnUbb2NWiJS10Vw3Ta
+      type: Generic
+    - imageChange: {}
+      type: ImageChange
+    - type: ConfigChange
