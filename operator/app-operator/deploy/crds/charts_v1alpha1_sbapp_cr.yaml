@@ -1,0 +1,28 @@
+apiVersion: charts.helm.k8s.io/v1alpha1
+kind: SbApp
+metadata:
+  name: example-sbapp
+spec:
+  # Default values copied from <project_dir>/helm-charts/sb-app/values.yaml
+  
+  # Default values for springboot app demo.
+  # This is a YAML-formatted file.
+  # Declare variables to be passed into your templates.
+  name: sb-app
+  replicaCount: 1
+  application_domain:
+    
+  image:
+    name: operator-test
+    repository: operator-test/operator-test
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    name: sb-app-service
+    type: ClusterIP
+    externalPort: 8080
+    internalPort: 8080
+  ingress:
+    enabled: false
+  resources: {}
+  

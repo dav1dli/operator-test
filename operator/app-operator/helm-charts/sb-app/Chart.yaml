@@ -1,0 +1,14 @@
+apiVersion: v1
+description: Spring Boot App example Helm chart
+keywords:
+- http
+- spring boot
+- www
+- web
+maintainers:
+- email: dav1dli@netscape.net
+  name: dav1dli
+name: sb-app
+sources:
+- https://github.com/dav1dli/operator-test
+version: 0.1.0
