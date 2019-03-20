@@ -1,4 +1,4 @@
-FROM registry.redhat.io/redhat-openjdk-18/openjdk18-openshift
+FROM redhat-openjdk-18/openjdk18-openshift
 VOLUME /tmp
 ARG DEPENDENCY=target/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
